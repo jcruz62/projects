@@ -1,0 +1,501 @@
+%% \LaTeX{}_185_moulds_g.tex
+%%
+%% The following file is a skeleton file that demonstrates how to implement the IEEEtran.cls class 
+%% file in \LaTeX{}. This file is intended for the CMPE185 Technical Writing for Engineers Course in 
+%% which the students must write a tutorial aimed towards novice \LaTeX{} users in the \LaTeX{} environment.
+%%
+%% This file is heavily adapted from Michael Shell's bare_adv.tex file made available at 
+%% http://www.ieee.org/conferences_events/conferences/publishing/templates.html
+%%
+%% You will need to rename this file with your information in the following format:
+%% \LaTeX{}_185_last name_ first initial.tex
+%% ---------------------------------------------------------------------------------------------------
+
+% \documentclass{} precedes the preamble and is typically the first command in any .tex document. Every .tex document should include this command as it defines what kind of document you intend on creating. Modifiers in square brackets [] can be added in between the text ''documentclass'' and the curly brackets {} to modify font size, templates, etc. 
+
+\documentclass[12pt,journal,compsoc]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{url}
+
+%-----PACKAGES-------------------------------------------------------------------------------------
+
+% Packages include extra commands that allow for additional formatting, ranging from Graphics, Math, to Alignment. The command to include packages will always look similar to \usepackage{} where the package name is within the curly brackets {}. Packages are defined in the preamble, i.e., between the \documentclass{} and \begin{document} commands.
+
+% The following link takes you to a list of additional packages that may not be listed here. http://en.wikibooks.org/wiki/\LaTeX{}/Package_Reference
+
+% TO INCLUDE PACKAGES: 
+% - Open the file ''\LaTeX{}_sample_packages.tex'' from the .zip folder.
+% - From this file, COPY the code for the package you want to include and PASTE into your own .tex file.
+% - Uncomment the package you want to include and load, i.e., remove the ''%'' in front of the \usepackage{package_name}.
+ 
+
+% Copy package text here:
+
+\usepackage{graphicx}
+% This is an example of how a \usepackage{} command should be included. You will need to include more packages to complete this assignment.
+
+
+
+
+%----- The DOCUMENT Environment-------------------------------------------------------------------
+
+% The \begin{document} and \end{document} commands establish the environment for the text of the document. The \begin{} and \end{} commands are used repeatedly in \LaTeX{} to show where an environment begins and ends. The \end{document} command will be the last line of this .tex file.
+
+\begin{document}
+
+% The following commands are self explanatory. Insert your title, author and date into each command's curly bracket. You can include the abstract, paper header and paper footer information in this section then conclude the section with the command \maketitle (shown as the last line at the end of this section).
+
+\title{Beginner Guide to \LaTeX{}}
+\author{Jade Cruz}
+% The double backslash \\ is used here to enter a ''Carriage Return'', or a line break. Note that the tilde ~ in between my name used as a ''Nonbreaking Space''. \LaTeX{} will not break a structure at a ~ so this keeps an author's name from being broken across two lines. Also note that I included my name as an example so make sure to only insert your name in this command.
+
+\date{}		% leaving the brackets empty omits the date
+% To input the current date, you can type: \date{\today}
+
+% The paper headers
+\markboth{}%
+{Moulds \MakeLowercase{\textit{et al.}}: CSE 185E}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+% The publisher's ID mark at the bottom of the page is less important with
+% Computer Society journal papers as those publications place the marks
+% outside of the main text columns and, therefore, unlike regular IEEE
+% journals, the available text space is not reduced by their presence.
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% or like this to get the Computer Society new two part style.
+%\IEEEpubid{\makebox[\columnwidth]{\hfill 0000--0000/00/\$00.00~\copyright~2007 IEEE}%
+%\hspace{\columnsep}\makebox[\columnwidth]{Published by the IEEE Computer Society\hfill}}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark (Computer Society jorunal
+% papers don't need this extra clearance.)
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+% for Computer Society papers, we must declare the abstract and index terms
+% PRIOR to the title within the \IEEEcompsoctitleabstractindextext IEEEtran
+% command as these need to go into the title area created by \maketitle.
+
+
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use \LaTeX{}'s standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway. In particular, the Computer Society does
+% not want either math or citations to appear in the abstract.
+
+% Note that keywords are not normally used for peerreview papers.
+
+\maketitle
+
+%----- The SECTION Environment -------------------------------------------------------------------
+
+% To create a section, simply type the command \section{} with the name of your section name inserted into the curly brackets {}. The section's body text follows underneath the \section{} command. 
+
+\section{Introduction}
+% Computer Society journal papers do something a tad strange with the very
+% first section heading (almost always called "Introduction"). They place it
+% ABOVE the main text! IEEEtran.cls currently does not do this for you.
+% However, You can achieve this effect by making \LaTeX{} jump through some
+% hoops via something like:
+%
+%\ifCLASSOPTIONcompsoc
+%  \noindent\raisebox{2\baselineskip}[0pt][0pt]%
+%  {\parbox{\columnwidth}{\section{Introduction}\label{sec:introduction}%
+%  \global\everypar=\everypar}}%
+%  \vspace{-1\baselineskip}\vspace{-\parskip}\par
+%\else
+%  \section{Introduction}\label{sec:introduction}\par
+%\fi
+%
+% Admittedly, this is a hack and may well be fragile, but seems to do the
+% trick for me. Note the need to keep any \label that may be used right
+% after \section in the above as the hack puts \section within a raised box.
+
+
+
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps (small caps for compsoc).
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+
+\IEEEPARstart{W}{hether} you're focused in research, industry, or even just taking class notes, \LaTeX{} is a powerful tool that can help you create professional notes, reports, papers, or articles. 
+\IEEEPARstart{T}{his} tool gives you the freedom to create your document in anyway you want. \LaTeX{} is very beginner friendly, and in this tutorial I will walk you through your journey on how to use \LaTeX{}.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+
+% Creating a subsection is similar to creating a section and is used with the command \subsection{}.
+
+\subsection{Why will this tutorial be helpful?}
+Many of you guys might be wondering, why would this tutorial be helpful? If you're someone who's worried about the overwhelming content or you're a complete beginner, you should not worry. I will provide simple, brief, and easy to understand explanations on the basics of \LaTeX{}. That includes functions, packages, tables, figures, and formulas. 
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+% Creating a subsubsection:
+
+\subsubsection{\textbf{Why should I learn \LaTeX{}?}}
+\LaTeX{} offers many benefits, especially if you're focused on technical writing. One advantage of \LaTeX{} is its ability to produce documents in a professional manner. This is great for producing academic papers and in a job setting. Another advantage is its versatility and customization. \LaTeX{} offers a wide variety of packages that can be easily used and shared amongst others. Since \LaTeX{} is free and open source, this allows you to be able to share your documentations freely with others and allows them to have their own copy to edit. 
+
+% -----------Creating a .tex file-------------------------------------------------
+\section{Creating a .tex file}
+
+\subsection{Preamble}
+Document class is like a blueprint/overall layout of your document. Each document type such as article, journal, and report has their own style, font, layout. The format and a few examples are shown below:
+\begin{verbatim}
+    \documentclass{article}
+\end{verbatim}
+\begin{verbatim}
+    \documentclass{report}
+\end{verbatim}
+Additionally, each document class has its own class files. Class files (.cls) are already defined settings, format, and structure of a specific document. For example let's use a document class article, the class file would be article.cls and it contains predefined settings and commands for articles.
+\subsection{Environments}
+After adding the document class, you are ready to start adding content into your document. In order to do so, you have to state the beginning of the document and where you are ending it.
+
+\begin{verbatim}
+    \begin{document}
+\end{verbatim}
+\begin{verbatim}
+    \end{document}
+\end{verbatim}
+This command is not only for stating where you document starts and ends, but is also used for figures, tables, equations, and text. For example:
+\begin{verbatim}
+    \begin{equation}
+        y = mx + b
+    \end{equation}
+\end{verbatim}
+
+\subsection{Title, Author, and Date}
+Having a title, author, and date is important to know what the document is about, when it was written, and who wrote it. The three commands below allow you to input your name and date. You can enter your information in the curly braces.
+% \title{Beginner Guide to \LaTeX{}} and \author{Jade Cruz}
+\begin{verbatim}
+    \title{Intro to LaTeX}
+\end{verbatim}
+\begin{verbatim}
+    \author{Jade Cruz}
+\end{verbatim}
+\begin{verbatim}
+    \date{\today}
+\end{verbatim}
+There is also a maketitle command that generates a title for your document based on the information given in the title, author, and date section. 
+\begin{verbatim}
+    \maketitle
+\end{verbatim}
+With the given example above, it would generate the title "Intro to LaTeX" above your first section. 
+
+\subsection{Packages}
+Packages are used if you want to have more than the basic functionality. It provides extra tools, fonts, and formats you can freely add. The most common packages are graphicx for inserting images and listings to add code. 
+\begin{verbatim}
+    \usepackage{graphicx
+\end{verbatim}
+\begin{verbatim}
+    \usepackage{listings}
+\end{verbatim}
+
+\subsection{Sections and Subsections}
+You have created a blank document and are now ready to write your first section of text. For example, you want a section called "Chapter 1" and subsection called "Chapter 1.1". This can be done by:
+\begin{verbatim}
+    \section{Enter title here}
+\end{verbatim}
+\begin{verbatim}
+    \subsection{Enter here}
+\end{verbatim}
+
+%----------Body text: Paragraphs and Content------------------------------------------
+\subsection{Body Text: Paragraphs and Content}
+Usually body text is separated into paragraphs, which can be done like this. 
+\begin{verbatim}
+    \section{paragraph 1}
+    \section{paragrpah 2}
+\end{verbatim}
+The content is mainly up to the user since you have the freedom to create the desired document you want. 
+
+
+\subsection{Reserved Characters}
+Reserved characters have a special meaning behind them. Using them freely and unknowingly may cause unwanted errors. Some common reserved characters are:
+\begin{verbatim} \ \end{verbatim} - used for the start of commands
+\begin{verbatim} ~ \end{verbatim} - adjusts the spacing between words
+\begin{verbatim} \\ \end{verbatim} - indicates a newline
+\begin{verbatim} % \end{verbatim} - is used to add comments to your document\\\\
+If you want to display these characters you could try backslash then your special character. Another way is: 
+\begin{verbatim}
+    \begin{verbatim}
+\end{verbatim}
+%----- Additional Features -----------------------------------------------------------------------
+\section{Additional Features}
+\subsection{Figures}
+% FIGURES:
+Figures are important to visualize data. Here, I will show you how I inserted a titration plot image. First, get your favorite spreadsheet editor and create a chart. Download the chart and head back over to your document. Drag the download into your document and you should be able to see your image. The same steps can be implemented for other images.\\\\
+Another way is to use the includegraphics command to insert the image.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{pH vs. Volume of Base (mL).png}
+    \caption{Titration Lab Experiment: Chemical reaction between weak acid and strong base (NaOH). The sharp rise in pH represents the equivalence point, meaning there is enough acid and base to neutralize the solution.}
+    \label{Titration Plot}
+\end{figure}
+\begin{verbatim}
+\includegraphics
+[width = 0.8\textwidth]
+{file name of your image}
+\end{verbatim}
+
+% Note the FIGURE Environment created by the \begin{figure} and \end{figure} commands.
+% You will need to use appropriate file types for figures and will also need to include that image file in the same folder as your .tex file. 
+
+%-------------------------------------------------------------------------------------------------
+\subsection{Brief Overview: Label, Cite, and Ref Commands for Titration Plot}
+
+\begin{verbatim} \label{Titration Plot} \end{verbatim} 
+In this situation the label command is used to label the figure above.\\\\
+Here, I am citing where and how I learned how to put in images into \LaTeX{}.
+
+\begin{verbatim} \cite{IEEEhowto: fishback} \end{verbatim} appears like: \cite{IEEEhowto:fishback}\\ 
+
+\begin{verbatim} \ref{Titration Plot} \end{verbatim} appears like: \ref{Titration Plot}\\ This allows you to create a reference to a already labeled item.\\\\
+More about labeling, citing, and referencing in section 4.4.
+
+% IMPORTANT NOTE: In order to assign the correct reference number to each label, you may have to compile your code twice. 
+
+%----------Mathematical formulas------------------------------------------
+\subsection{Mathematical Formulas}
+Another cool feature of \LaTeX{} is its ability to express mathematical expressions. For more complicated equations, don't forget to use the amsmath package as it allows for complex formulas. For example: The "n choose k" formula is $\frac{n!}{k!(n-k)!} = \binom{n}{k}$.
+\begin{verbatim}
+\frac{n!}{k!(n-k)!} = \binom{n}{k}
+\end{verbatim}
+\subsection{Equation Environments}
+In-line equations are for when you want a short mathematical expression to appear in your text. This can be done by using:
+\begin{verbatim}
+$area of circle: \( A = \pi r^2 \)$
+\end{verbatim}
+\begin{verbatim}
+\area of circle: \( A = \pi r^2 \)\
+\end{verbatim}
+Display equations are usually longer and more complex equations. To show longer and more complex equations, this can be done by: 
+\begin{verbatim}
+    \begin{equation}
+        k_{n+1} = n^2 + k_n^2 - k_{n-1}
+    \end{equation}
+\end{verbatim}
+You could replace equation with align or gather as they do the same thing.
+
+\subsection{Math Command Examples}
+Some cool math commands include:
+\begin{verbatim}
+    \frac 
+\end{verbatim}
+- this is used for fractions
+\begin{verbatim}
+    ^n
+\end{verbatim}
+- this means to the power of, where n is a number
+\begin{verbatim}
+    _n
+\end{verbatim}
+- this indicates a subscript, where n is a number
+\begin{verbatim}
+    \delta
+\end{verbatim}
+- this gives you the delta symbol\\\\
+In order to use the commands above, you must place it between two dollar signs
+\begin{verbatim}
+    $\delta$
+    $x^2$
+    $\frac{1}{2}$
+\end{verbatim} 
+Shown as: $\delta$, $x^2$, $\frac{1}{2}$\\\\
+%-------------------------------------------------------------------------------------------------
+\\\\
+\subsection{Tables}
+Tables are also a great visualization tool. Here I will show you how to make a simple table. In order to make a table you need.
+\begin{verbatim}
+    \begin{table}
+\end{verbatim}- contains all the information
+\begin{verbatim}
+    \begin(tabular}
+\end{verbatim}
+- organizes and separates it into rows and columns.
+\begin{verbatim}
+    |c|
+\end{verbatim}- c times determines how many columns there will be. 
+\begin{verbatim}
+    \hline
+\end{verbatim}
+- used to draw horizontal lines for the table
+\begin{verbatim}
+    \\
+\end{verbatim}
+- indicates a new row in the table
+\begin{verbatim}
+    |
+\end{verbatim}
+- used to draw vertical lines for the table\\
+Some cool features are: 
+\begin{verbatim}
+    \begin{tabular}{|l|c|r|}
+\end{verbatim} l stands for left, c stands for center, and r stands for right aligned.
+To input content for each row you write the answer to column 1, type \&, the answer to column 2 until you're done with all your columns. 
+\begin{verbatim}
+    Person 1 & Jurassic World
+\end{verbatim}
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.3}
+\caption{Favorite Movie Table}
+\label{table_example}
+\centering
+\begin{tabular}{|c||c|}
+\hline
+\textbf{Person} & \textbf{Favorite Movie}\\
+\hline
+Person 1 & Jurassic World\\
+Person 2 & Dora\\
+Person 3 & Sponge-bob\\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% However, Computer Society journals sometimes do use bottom floats - bear
+% this in mind when choosing appropriate optional arguments for the
+% figure/table environments.
+% Note that, \LaTeX{}2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+\section{Conclusion}
+Overall, I have went over the basics on how to create a documents, the different types, and the variety of features it has to offer. After going through each section, you should now be able to combine the different features together to make your very own document the way you want it to be. Be creative and have fun!
+
+
+%----- ACKNOWLEDGEMENT SECTION -------------------------------------------------------------------
+% Explain what the asterisk * does in the next line: 
+\section*{Acknowledgements}
+\subsection{How to: Acknowledgements}
+Writing acknowledgements is important as it shows your gratitude and professionalism towards others. To include acknowledgements, create a section and write a few sentences or a paragraph on who/what you would like to acknowledge. 
+
+\subsection{My Acknowledgements}
+The author would like to thank Professor Moulds and \LaTeX{} tutorial website guide on teaching me how to use \LaTeX{}. I am especially grateful you as the reader for taking your time to read through my tutorial. Professor Moulds has been a big help to starting my \LaTeX{} journey and I hope I was able to do the same for you as well. Thank you all for your help. 
+
+
+%----- BIBLIOGRAPHY FIX THIS SECTION LATER ------------------------------------------------------------------------------
+
+% You will need to explain how to include the bibliography section as follows. Explain the environment and how to add new items.
+% Including how \ref, \cite and \label should be included here.
+
+% Reminder: you will need to explain how to include the Bibliography Section and then include your own Bibliography at the end of your own tutorial.
+
+\subsection{How to: Bibliography}
+The "thebibliography" environment is used to manually create a reference or bibliography list. An example would be when I referenced in section 3.2: Label, Cite, and Ref Commands. To set up your own bibliography use:
+\begin{verbatim}
+    \begin{thebibliography}{enter here}
+\end{verbatim}
+- "enter here" enter the number of labels (references) you have
+\begin{verbatim}
+    \bibitem{enter here}
+\end{verbatim}
+- "enter here" enter a label that can be used to reference later
+\begin{verbatim}
+    \bibitem{label}Author(s),
+    "Title of the Video",
+    YouTube, Month Year. 
+    [Online]. 
+    Available: URL.
+\end{verbatim}
+For an example look at section 4.4: My Bibliography
+\begin{verbatim}
+    \end{thebibliography}
+\end{verbatim}
+
+\subsection{Labeling, Figures, and Citations}
+There are three main commands used which are: 
+\begin{verbatim}
+    \label{enter title here}
+\end{verbatim}
+- this is used to label objects in your document and reference later. In this document you can see I used it for the titration plot
+\begin{verbatim}
+    \cite{key}
+\end{verbatim}
+- the key is associated with the reference you want to cite. You can see I used it in section 3.2.
+\begin{verbatim}
+    \ref}{enter title here}
+\end{verbatim}
+- this is used to reference back to a labeled item. You can see I used it for the titration plot
+
+%----- BIOGRAPHY Section ---------------------------------------------------------------
+\subsection{My Bibliography}
+
+\begin{thebibliography}{1}
+\bibitem{IEEEhowto:fishback}
+P.~Fishback, \emph{{\LaTeX{}} using Overleaf Introduction}, 2022.
+\url{https://www.youtube.com/watch?v=P5EWoPOnZTU&ab_channel=PaulFishback}
+\end{thebibliography}
+
+%----- Optional: BIOGRAPHY Section ---------------------------------------------------------------
+ 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the \LaTeX{} parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Gerald Moulds}
+% or if you just want to reserve a space for a photo:
+
+%\begin{IEEEbiography}{Gerald Moulds}
+%Biography text here.
+%\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here. Creating a bib 
+
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+\end{document}
