@@ -1,0 +1,98 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{fancyhdr} % For headers and footers
+\usepackage{amsmath} % For mathematical formatting
+\usepackage{hyperref} % For clickable links
+\usepackage{lipsum} % For generating dummy text, you can remove this package in your actual document
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+% Define headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{Class Notes - \rightmark} % Display section title in the header
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Class Notes Template} % Title of the assignment
+\author{Jade Cruz}
+\date{University of California Santa Cruz} 
+
+\begin{document}
+
+\maketitle % Print the title
+
+\tableofcontents % Add table of contents
+
+%----------------------------------------------------------------------------------------
+%	Topic 1
+%----------------------------------------------------------------------------------------
+
+\section*{Introduction} % Unnumbered section
+\addcontentsline{toc}{section}{Introduction} % Add section to table of contents
+Add General Overview on Topic
+\begin{info} % Information block
+    This is for when you need to emphasize any information
+\end{info}
+
+%------------------PROBLEM 1----------------------------------------------------------------------
+\section{Topic 1:How to Add Questions or Example Problems}
+\begin{question}
+Enter your question here. This could be for practice problems or general overall questions
+ 
+	% Subquestions numbered with letters
+	\begin{enumerate}[(a)]
+                \item Enter description here
+                \item It can be used for multiple choice
+                \item It can also be used to list important details
+	\end{enumerate}
+\end{question}
+
+%--------------------------------------------------------------------------------------------------
+%   Topic 2
+%--------------------------------------------------------------------------------------------------
+
+\section{Topic 2: Creating Sections and Subsections}
+Add general details here
+\subsection{Subsection for Topic 1}
+% Numbered question, with an optional title
+\begin{question}[\itshape (Here you can add a title to your question!)]
+Enter question here: How to create a multiple choice question?
+
+    \begin{enumerate}[{a}]
+        \item option 1
+        \item option 2
+        \item option 3
+        \item option 4
+    \end{enumerate}
+\end{question}
+
+\subsection{Subsection for Topic 1}
+Add details here
+
+%----------------------------------------------------------------------------------------
+%	Adding Code
+%----------------------------------------------------------------------------------------
+
+\section{Topic 3: How to add Code}
+It is also possible to add code in your documentation
+\begin{file}[hello.py]
+
+\begin{lstlisting}[language=Python]
+print("Hello World!")
+\end{lstlisting}
+\end{file}
+Add explanation on what's going on
+%----------------------------------------------------------------------------------------
+\section{Conclusion}
+Overall, this is a short basic way to write more professional notes
+
+\end{document}
